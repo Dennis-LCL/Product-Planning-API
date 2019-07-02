@@ -1,7 +1,7 @@
 const app = require("../src/app");
 const request = require("supertest");
 const { MongoClient } = require("mongodb");
-const mockProductPlans = require("./product-plan.mockdata");
+const mockProductPlans = require("./productplan.mockdata");
 // console.log("mock data before insert into db: ", mockProductPlans);
 
 describe("Product-Planning API", () => {
@@ -15,7 +15,7 @@ describe("Product-Planning API", () => {
   };
 
   const insertMockProductPlans = async () => {
-    const ProductPlanCollection = await db.collection("product-plans");
+    const ProductPlanCollection = await db.collection("productplans");
     const mockData = getMockProductPlans();
     await ProductPlanCollection.insertMany(mockData);
   };
@@ -49,6 +49,8 @@ describe("Product-Planning API", () => {
   it("GET / should return all product-plans in db.", async () => {
     await insertMockProductPlans();
     const response = await request(app).get("/");
+    console.log(response.body);
+    console.log(mockProductPlans);
     expect(response.status).toEqual(200);
     expect(response.body).toMatchObject(mockProductPlans);
   });

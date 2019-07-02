@@ -1,7 +1,7 @@
 const request = require("supertest");
 const app = require("../src/app");
 const { MongoClient } = require("mongodb");
-const mockProductPlans = require("./product-plan.mockdata");
+const mockProductPlans = require("./productplan.mockdata");
 const mockForecastAssumptions = require("./forecast-assumptions.mockdata");
 
 describe("routes/forecastassumptions", () => {
@@ -15,7 +15,7 @@ describe("routes/forecastassumptions", () => {
   };
 
   const insertMockProductPlans = async () => {
-    const ProductPlanCollection = await db.collection("product-plans");
+    const ProductPlanCollection = await db.collection("productplans");
     const mockData = getMockProductPlans();
     await ProductPlanCollection.insertMany(mockData);
   };

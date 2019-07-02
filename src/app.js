@@ -3,8 +3,8 @@ const express = require("express");
 const app = express();
 const forecastAssumptionsRouter = require("./routes/forecast-assumptions.route");
 const mongoose = require("mongoose");
-require("./models/product-plan.model");
-const ProductPlanModel = mongoose.model("Product-plan");
+require("./models/productplan.model");
+const ProductPlanModel = mongoose.model("Productplan");
 
 app.use(express.json());
 app.use("/forecastassumptions", forecastAssumptionsRouter);

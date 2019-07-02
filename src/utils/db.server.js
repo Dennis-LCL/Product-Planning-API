@@ -5,7 +5,7 @@ const mongoOptions = {
 };
 
 const dbURI =
-  global.__MONGO_URI__ || "mongodb://localhost:27017/product-planning";
+  global.__MONGO_URI__ || "mongodb://localhost:27017/productplanning";
 mongoose.connect(dbURI, mongoOptions);
 const db = mongoose.connection;
 
