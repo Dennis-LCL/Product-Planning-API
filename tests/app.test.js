@@ -49,8 +49,8 @@ describe("Product-Planning API", () => {
   it("GET / should return all product-plans in db.", async () => {
     await insertMockProductPlans();
     const response = await request(app).get("/");
-    console.log(response.body);
-    console.log(mockProductPlans);
+    // console.log(response.body);
+    // console.log(mockProductPlans);
     expect(response.status).toEqual(200);
     expect(response.body).toMatchObject(mockProductPlans);
   });
