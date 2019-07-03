@@ -44,8 +44,18 @@ describe("routes/forecastassumptions", () => {
   it("GET / should return forecast assumptions for all Product-PromoType combinations.", async () => {
     await insertMockProductPlans();
     const response = await request(app).get("/forecastassumptions");
-    console.log("Receive: ", response.body);
     expect(response.status).toEqual(200);
     expect(response.body).toMatchObject(mockForecastAssumptions);
+  });
+
+  it.only("GET /:pptid should return forecast assumption for selected Product-PromoType combination.", async () => {
+    await insertMockProductPlans();
+    const param = mockForecastAssumptions[1].ID;
+    console.log(param);
+    const response = await request(app).get(`/forecastassumptions/${param}`);
+    // console.log("Expect: ", mockForecastAssumptions[1]);
+    // console.log("Receive: ", response.body);
+    expect(response.status).toEqual(200);
+    // expect(response.body).toMatchObject(mockForecastAssumptions[1]);
   });
 });
