@@ -27,8 +27,8 @@ describe("routes/forecastassumptions", () => {
       useNewUrlParser: true
     });
     db = await connection.db(dbName);
-    console.log(`Connected to DB: ${dbName}.`);
-    console.log(mockForecastAssumptions);
+    // console.log(`Connected to DB: ${dbName}.`);
+    // console.log("Expect: ", mockForecastAssumptions);
   });
 
   afterAll(async () => {
@@ -42,7 +42,9 @@ describe("routes/forecastassumptions", () => {
   });
 
   it("GET / should return forecast assumptions for all Product-PromoType combinations.", async () => {
+    await insertMockProductPlans();
     const response = await request(app).get("/forecastassumptions");
+    console.log("Receive: ", response.body);
     expect(response.status).toEqual(200);
     expect(response.body).toMatchObject(mockForecastAssumptions);
   });

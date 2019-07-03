@@ -73,7 +73,7 @@ module.exports = [
   },
   {
     ID: "A02-NPW",
-    Product: "Drop Your Hair Shampoo",
+    Product: "Scratch Your Sculp Shampoo",
     PromoType: "Non-Promo Week",
     KPIs: {
       ScanUnit: 100,
