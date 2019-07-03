@@ -1,7 +1,7 @@
 const app = require("../src/app");
 const request = require("supertest");
 const { MongoClient } = require("mongodb");
-const mockProductPlans = require("./productplan.mockdata");
+const mockProductPlans = require("./product-plans.mockdata");
 // console.log("mock data before insert into db: ", mockProductPlans);
 
 describe("Product-Planning API", () => {

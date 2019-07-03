@@ -14,7 +14,7 @@ const ProductPlanSchema = Schema({
       ID: { type: String, required: true, unique: true },
       PromoType: { type: String, required: true },
       Frequency: { type: Number, required: true },
-      KPIs: {
+      Params: {
         BaseListPrice: { type: Number, required: true },
         BaselineUnit: { type: Number, required: true },
         FundRate: { type: Number, required: true },

@@ -40,23 +40,12 @@ describe("routes/promoparams", () => {
     await db.dropDatabase();
   });
 
-  it.only("GET / should return promo params for all Product-PromoType combinations.", async () => {
+  it("GET / should return promo params for all Product-PromoType combinations.", async () => {
     await insertMockPromoParams();
     const response = await request(app).get("/promoparams");
     console.log(mockPromoParams);
     console.log(response.body);
     expect(response.status).toEqual(200);
     expect(response.body).toMatchObject(mockPromoParams);
-  });
-
-  it("GET /:pptid should return forecast assumption for selected Product-PromoType combination.", async () => {
-    await insertMockProductPlans();
-    const param = mockPromoParams[1].ID;
-    console.log(param);
-    const response = await request(app).get(`/forecastassumptions/${param}`);
-    // console.log("Expect: ", mockPromoParams[1]);
-    // console.log("Receive: ", response.body);
-    expect(response.status).toEqual(200);
-    // expect(response.body).toMatchObject(mockPromoParams[1]);
   });
 });

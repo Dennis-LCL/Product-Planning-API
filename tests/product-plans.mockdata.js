@@ -11,7 +11,7 @@ module.exports = [
         ID: "A01-NPW",
         PromoType: "Non-Promo Week",
         Frequency: 0,
-        KPIs: {
+        Params: {
           ScanUnit: 100,
           BaselineUnit: 100,
           IncrementalUnit: 0,
@@ -29,7 +29,7 @@ module.exports = [
         ID: "A01-10% Off",
         PromoType: "10% Off",
         Frequency: 0,
-        KPIs: {
+        Params: {
           ScanUnit: 120,
           BaselineUnit: 100,
           IncrementalUnit: 20,
@@ -47,7 +47,7 @@ module.exports = [
         ID: "A01-30% Off",
         PromoType: "30% Off",
         Frequency: 0,
-        KPIs: {
+        Params: {
           ScanUnit: 300,
           BaselineUnit: 100,
           IncrementalUnit: 200,
@@ -65,7 +65,7 @@ module.exports = [
         ID: "A01-50% Off",
         PromoType: "50% Off",
         Frequency: 0,
-        KPIs: {
+        Params: {
           ScanUnit: 1000,
           BaselineUnit: 100,
           IncrementalUnit: 900,
@@ -93,7 +93,7 @@ module.exports = [
         ID: "A02-NPW",
         PromoType: "Non-Promo Week",
         Frequency: 0,
-        KPIs: {
+        Params: {
           ScanUnit: 100,
           BaselineUnit: 100,
           IncrementalUnit: 0,
@@ -111,7 +111,7 @@ module.exports = [
         ID: "A02-10% Off",
         PromoType: "10% Off",
         Frequency: 0,
-        KPIs: {
+        Params: {
           ScanUnit: 120,
           BaselineUnit: 100,
           IncrementalUnit: 20,
@@ -129,7 +129,7 @@ module.exports = [
         ID: "A02-30% Off",
         PromoType: "30% Off",
         Frequency: 0,
-        KPIs: {
+        Params: {
           ScanUnit: 300,
           BaselineUnit: 100,
           IncrementalUnit: 200,
@@ -147,7 +147,7 @@ module.exports = [
         ID: "A02-50% Off",
         PromoType: "50% Off",
         Frequency: 0,
-        KPIs: {
+        Params: {
           ScanUnit: 1000,
           BaselineUnit: 100,
           IncrementalUnit: 900,

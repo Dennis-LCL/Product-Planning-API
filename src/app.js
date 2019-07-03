@@ -5,8 +5,9 @@ const promoParamsRouter = require("./routes/promo-params.route");
 const productsRouter = require("./routes/products.route");
 const promoGuidelineRouter = require("./routes/promo-guidelines.route");
 const mongoose = require("mongoose");
-require("./models/productplan.model");
+require("./models/product-plan.model");
 const ProductPlanModel = mongoose.model("Productplan");
+// const mockProductPlans = require("../tests/product-plans.mockdata");
 
 app.use(express.json());
 app.use("/promoparams", promoParamsRouter);
@@ -18,6 +19,7 @@ app.get("/greetings", (req, res) => {
 });
 
 app.get("/", async (req, res) => {
+  // await ProductPlanModel.create(mockProductPlans);
   const allProductPlans = await ProductPlanModel.find();
   res.status(200).send(allProductPlans);
 });
@@ -25,6 +27,7 @@ app.get("/", async (req, res) => {
 app.use((err, req, res, next) => {
   console.log("Error", err);
   res.sendStatus(500);
+  next();
 });
 
 module.exports = app;
