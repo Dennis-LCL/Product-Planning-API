@@ -1,9 +1,10 @@
 module.exports = [
   {
-    ID: "A01-NPW",
-    Product: "Drop Your Hair Shampoo",
-    PromoType: "Non-Promo Week",
-    KPIs: {
+    PPID: "A01-NPW",
+    ProductCode: "A01",
+    PromoTypeID: "NPW",
+    TimePeriod: "",
+    Params: {
       ScanUnit: 100,
       BaselineUnit: 100,
       IncrementalUnit: 0,
@@ -18,10 +19,11 @@ module.exports = [
     }
   },
   {
-    ID: "A01-10% Off",
-    Product: "Drop Your Hair Shampoo",
-    PromoType: "10% Off",
-    KPIs: {
+    PPID: "A01-10POFF",
+    ProductCode: "A01",
+    PromoTypeID: "10POFF",
+    TimePeriod: "",
+    Params: {
       ScanUnit: 120,
       BaselineUnit: 100,
       IncrementalUnit: 20,
@@ -36,10 +38,11 @@ module.exports = [
     }
   },
   {
-    ID: "A01-30% Off",
-    Product: "Drop Your Hair Shampoo",
-    PromoType: "30% Off",
-    KPIs: {
+    PPID: "A01-30POFF",
+    ProductCode: "A01",
+    PromoTypeID: "30POFF",
+    TimePeriod: "",
+    Params: {
       ScanUnit: 300,
       BaselineUnit: 100,
       IncrementalUnit: 200,
@@ -54,10 +57,11 @@ module.exports = [
     }
   },
   {
-    ID: "A01-50% Off",
-    Product: "Drop Your Hair Shampoo",
-    PromoType: "50% Off",
-    KPIs: {
+    PPID: "A01-50POFF",
+    ProductCode: "A01",
+    PromoTypeID: "50POFF",
+    TimePeriod: "",
+    Params: {
       ScanUnit: 1000,
       BaselineUnit: 100,
       IncrementalUnit: 900,
@@ -72,10 +76,11 @@ module.exports = [
     }
   },
   {
-    ID: "A02-NPW",
-    Product: "Scratch Your Sculp Shampoo",
-    PromoType: "Non-Promo Week",
-    KPIs: {
+    PPID: "A02-NPW",
+    ProductCode: "A02",
+    PromoTypeID: "NPW",
+    TimePeriod: "",
+    Params: {
       ScanUnit: 100,
       BaselineUnit: 100,
       IncrementalUnit: 0,
@@ -90,10 +95,11 @@ module.exports = [
     }
   },
   {
-    ID: "A02-10% Off",
-    Product: "Scratch Your Sculp Shampoo",
-    PromoType: "10% Off",
-    KPIs: {
+    PPID: "A02-10POFF",
+    ProductCode: "A02",
+    PromoTypeID: "10POFF",
+    TimePeriod: "",
+    Params: {
       ScanUnit: 120,
       BaselineUnit: 100,
       IncrementalUnit: 20,
@@ -108,10 +114,11 @@ module.exports = [
     }
   },
   {
-    ID: "A02-30% Off",
-    Product: "Scratch Your Sculp Shampoo",
-    PromoType: "30% Off",
-    KPIs: {
+    PPID: "A02-30POFF",
+    ProductCode: "A02",
+    PromoTypeID: "30POFF",
+    TimePeriod: "",
+    Params: {
       ScanUnit: 300,
       BaselineUnit: 100,
       IncrementalUnit: 200,
@@ -126,10 +133,11 @@ module.exports = [
     }
   },
   {
-    ID: "A02-50% Off",
-    Product: "Scratch Your Sculp Shampoo",
-    PromoType: "50% Off",
-    KPIs: {
+    PPID: "A02-50POFF",
+    ProductCode: "A02",
+    PromoTypeID: "50POFF",
+    TimePeriod: "",
+    Params: {
       ScanUnit: 1000,
       BaselineUnit: 100,
       IncrementalUnit: 900,
