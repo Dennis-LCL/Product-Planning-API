@@ -26,7 +26,7 @@ module.exports = [
         }
       },
       {
-        ID: "A01-10% Off",
+        ID: "A01-10POFF",
         PromoType: "10% Off",
         Frequency: 0,
         Params: {
@@ -44,7 +44,7 @@ module.exports = [
         }
       },
       {
-        ID: "A01-30% Off",
+        ID: "A01-30POFF",
         PromoType: "30% Off",
         Frequency: 0,
         Params: {
@@ -62,7 +62,7 @@ module.exports = [
         }
       },
       {
-        ID: "A01-50% Off",
+        ID: "A01-50POFF",
         PromoType: "50% Off",
         Frequency: 0,
         Params: {
@@ -108,7 +108,7 @@ module.exports = [
         }
       },
       {
-        ID: "A02-10% Off",
+        ID: "A02-10POFF",
         PromoType: "10% Off",
         Frequency: 0,
         Params: {
@@ -126,7 +126,7 @@ module.exports = [
         }
       },
       {
-        ID: "A02-30% Off",
+        ID: "A02-30POFF",
         PromoType: "30% Off",
         Frequency: 0,
         Params: {
@@ -144,7 +144,7 @@ module.exports = [
         }
       },
       {
-        ID: "A02-50% Off",
+        ID: "A02-50POFF",
         PromoType: "50% Off",
         Frequency: 0,
         Params: {
