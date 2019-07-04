@@ -1,10 +1,10 @@
 module.exports = [
   {
-    PPID: "A01-NPW",
+    ID: "A01-NPW",
     ProductCode: "A01",
     PromoTypeID: "NPW",
     TimePeriod: "",
-    Params: {
+    KPIs: {
       ScanUnit: 100,
       BaselineUnit: 100,
       IncrementalUnit: 0,
@@ -19,11 +19,11 @@ module.exports = [
     }
   },
   {
-    PPID: "A01-10POFF",
+    ID: "A01-10POFF",
     ProductCode: "A01",
     PromoTypeID: "10POFF",
     TimePeriod: "",
-    Params: {
+    KPIs: {
       ScanUnit: 120,
       BaselineUnit: 100,
       IncrementalUnit: 20,
@@ -38,11 +38,11 @@ module.exports = [
     }
   },
   {
-    PPID: "A01-30POFF",
+    ID: "A01-30POFF",
     ProductCode: "A01",
     PromoTypeID: "30POFF",
     TimePeriod: "",
-    Params: {
+    KPIs: {
       ScanUnit: 300,
       BaselineUnit: 100,
       IncrementalUnit: 200,
@@ -57,11 +57,11 @@ module.exports = [
     }
   },
   {
-    PPID: "A01-50POFF",
+    ID: "A01-50POFF",
     ProductCode: "A01",
     PromoTypeID: "50POFF",
     TimePeriod: "",
-    Params: {
+    KPIs: {
       ScanUnit: 1000,
       BaselineUnit: 100,
       IncrementalUnit: 900,
@@ -76,11 +76,11 @@ module.exports = [
     }
   },
   {
-    PPID: "A02-NPW",
+    ID: "A02-NPW",
     ProductCode: "A02",
     PromoTypeID: "NPW",
     TimePeriod: "",
-    Params: {
+    KPIs: {
       ScanUnit: 100,
       BaselineUnit: 100,
       IncrementalUnit: 0,
@@ -95,11 +95,11 @@ module.exports = [
     }
   },
   {
-    PPID: "A02-10POFF",
+    ID: "A02-10POFF",
     ProductCode: "A02",
     PromoTypeID: "10POFF",
     TimePeriod: "",
-    Params: {
+    KPIs: {
       ScanUnit: 120,
       BaselineUnit: 100,
       IncrementalUnit: 20,
@@ -114,11 +114,11 @@ module.exports = [
     }
   },
   {
-    PPID: "A02-30POFF",
+    ID: "A02-30POFF",
     ProductCode: "A02",
     PromoTypeID: "30POFF",
     TimePeriod: "",
-    Params: {
+    KPIs: {
       ScanUnit: 300,
       BaselineUnit: 100,
       IncrementalUnit: 200,
@@ -133,11 +133,11 @@ module.exports = [
     }
   },
   {
-    PPID: "A02-50POFF",
+    ID: "A02-50POFF",
     ProductCode: "A02",
     PromoTypeID: "50POFF",
     TimePeriod: "",
-    Params: {
+    KPIs: {
       ScanUnit: 1000,
       BaselineUnit: 100,
       IncrementalUnit: 900,

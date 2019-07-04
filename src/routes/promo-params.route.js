@@ -7,7 +7,10 @@ const PromoParamModel = mongoose.model("Promoparam");
 
 promoParamsRouter.get("/", async (req, res, next) => {
   // await PromoParamModel.create(mockPromoParams);
-  const foundPromoParams = await PromoParamModel.find();
+  const foundPromoParams = await PromoParamModel.find(
+    {},
+    { _id: 0, ID: 1, KPIs: 1 }
+  );
   res.status(200).send(foundPromoParams);
 });
 

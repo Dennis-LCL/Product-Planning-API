@@ -3,11 +3,11 @@ mongoose.set("useCreateIndex", true);
 const Schema = mongoose.Schema;
 
 const PromoParamSchema = Schema({
-  PPID: { type: String, required: true, unique: true },
+  ID: { type: String, required: true, unique: true },
   ProductCode: { type: String, required: true },
   PromoTypeID: { type: String, required: true },
   TimePeriod: { type: String },
-  Params: {
+  KPIs: {
     BaseListPrice: { type: Number, required: true },
     BaselineUnit: { type: Number, required: true },
     FundRate: { type: Number, required: true },
