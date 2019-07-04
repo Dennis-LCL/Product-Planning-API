@@ -3,11 +3,16 @@ mongoose.set("useCreateIndex", true);
 const Schema = mongoose.Schema;
 
 const ProductPlanSchema = Schema({
+  ID: { type: String, required: true, unique: true },
   Product: {
     Brand: { type: String, required: true },
     Group: { type: String, required: true },
-    Code: { type: String, required: true, unique: true },
+    Code: { type: String, required: true },
     Description: { type: String, required: true }
+  },
+  TimePeriod: {
+    Granularity: { type: String },
+    Period: { type: String }
   },
   Plan: [
     {

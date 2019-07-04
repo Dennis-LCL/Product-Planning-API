@@ -7,7 +7,8 @@ const ProductModel = mongoose.model("Product");
 
 productsRouter.get("/", async (req, res, next) => {
   // await ProductModel.create(mockProducts);
-  const foundProducts = await ProductModel.find();
+  const foundProducts = await ProductModel.find({}, { _id: 0, __v: 0 });
+  console.log(foundProducts);
   res.status(200).send(foundProducts);
 });
 

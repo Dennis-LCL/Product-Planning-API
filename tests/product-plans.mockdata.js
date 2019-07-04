@@ -1,10 +1,15 @@
 module.exports = [
   {
+    ID: "A01-FY1920",
     Product: {
       Brand: "Boldie",
       Group: "Shampoo 250ml",
       Code: "A01",
       Description: "Drop Your Hair Shampoo"
+    },
+    TimePeriod: {
+      Granularity: "Fiscal Year",
+      Period: "FY1920"
     },
     Plan: [
       {
@@ -82,11 +87,16 @@ module.exports = [
     ]
   },
   {
+    ID: "A02-FY1920",
     Product: {
       Brand: "Boldie",
       Group: "Shampoo 250ml",
       Code: "A02",
       Description: "Scratch Your Sculp Shampoo"
+    },
+    TimePeriod: {
+      Granularity: "Fiscal Year",
+      Period: "FY1920"
     },
     Plan: [
       {
