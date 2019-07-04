@@ -42,9 +42,33 @@ describe("routes/promo-guidelines", () => {
   it("GET / should return all promo guideines.", async () => {
     await insertMockPromoGuidelines();
     const response = await request(app).get("/promoguidelines");
-    console.log(mockPromoGuidelines);
-    console.log(response.body);
+    // console.log(mockPromoGuidelines);
+    // console.log(response.body);
     expect(response.status).toEqual(200);
     expect(response.body).toMatchObject(mockPromoGuidelines);
   });
+
+  it("GET /promotypes should return extracted promo types.", async () => {
+    await insertMockPromoGuidelines();
+    const response = await request(app).get("/promoguidelines/promotypes");
+    // console.log(mockPromoTypes);
+    // console.log(response.body);
+    expect(response.status).toEqual(200);
+    expect(response.body).toMatchObject(mockPromoTypes);
+  });
 });
+
+const mockPromoTypes = [
+  {
+    PTID: "10POFF",
+    PromoType: "10% Off"
+  },
+  {
+    PTID: "30POFF",
+    PromoType: "30% Off"
+  },
+  {
+    PTID: "50POFF",
+    PromoType: "50% Off"
+  }
+];

@@ -7,11 +7,11 @@ module.exports = [
       Description: "Drop Your Hair Shampoo"
     },
     Guidelines: [
-      {
-        PTID: "NPW",
-        PromoType: "Non-Promo Week",
-        MaxFrequency: 0
-      },
+      // {
+      //   PTID: "NPW",
+      //   PromoType: "Non-Promo Week",
+      //   MaxFrequency: 0
+      // },
       {
         PTID: "10POFF",
         PromoType: "10% Off",
@@ -37,11 +37,11 @@ module.exports = [
       Description: "Scratch Your Sculp Shampoo"
     },
     Guidelines: [
-      {
-        PTID: "NPW",
-        PromoType: "Non-Promo Week",
-        MaxFrequency: 0
-      },
+      // {
+      //   PTID: "NPW",
+      //   PromoType: "Non-Promo Week",
+      //   MaxFrequency: 0
+      // },
       {
         PTID: "10POFF",
         PromoType: "10% Off",

@@ -11,4 +11,16 @@ promoGuidelinesRouter.get("/", async (req, res, next) => {
   res.status(200).send(foundPromoGuidelines);
 });
 
+promoGuidelinesRouter.get("/promotypes", async (req, res, next) => {
+  const foundPromoGuidelines = await PromoGuidelineModel.findOne(
+    { "Product.Code": "A01" },
+    { "Guidelines.PTID": 1, "Guidelines.PromoType": 1 }
+  );
+  const promoTypes = [];
+  foundPromoGuidelines.Guidelines.map(Guideline => {
+    return promoTypes.push(Guideline);
+  });
+  res.status(200).send(promoTypes);
+});
+
 module.exports = promoGuidelinesRouter;

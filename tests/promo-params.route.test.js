@@ -43,8 +43,8 @@ describe("routes/promoparams", () => {
   it("GET / should return promo params for all Product-PromoType combinations.", async () => {
     await insertMockPromoParams();
     const response = await request(app).get("/promoparams");
-    console.log(mockPromoParams);
-    console.log(response.body);
+    // console.log("Expect: ", mockPromoParams);
+    // console.log("Received: ", response.body);
     expect(response.status).toEqual(200);
     expect(response.body).toMatchObject(mockPromoParams);
   });
