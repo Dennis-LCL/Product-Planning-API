@@ -46,9 +46,17 @@ promoPlansRouter.post("/", async (req, res, next) => {
   };
 
   // Insert new PromoPlan document into collection
-
   const createdPromoPlan = await PromoPlanModel.create(newPromoPlan);
   res.status(200).send(createdPromoPlan);
+});
+
+promoPlansRouter.put("/:planid", async (req, res, next) => {
+  const updatedPromoPlan = await PromoPlanModel.findOneAndUpdate(
+    { PlanID: Number(req.params.planid) },
+    req.body,
+    { new: true }
+  );
+  res.status(200).send(updatedPromoPlan);
 });
 
 module.exports = promoPlansRouter;

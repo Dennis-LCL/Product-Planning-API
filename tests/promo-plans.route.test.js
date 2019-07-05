@@ -67,6 +67,17 @@ describe("routes/products", () => {
     expect(response.status).toEqual(200);
     expect(response.body).toMatchObject(newPlan);
   });
+
+  it("PUT /:planid should find and update the promo plan.", async () => {
+    await insertMockPromoPlans();
+    const response = await request(app)
+      .put("/promoplans/2")
+      .send(newPlanWithoutPlanID);
+    console.log("Expect: ", updatedPlan);
+    console.log("Received: ", response.body);
+    expect(response.status).toEqual(200);
+    expect(response.body).toMatchObject(updatedPlan);
+  });
 });
 
 const newPlanWithoutPlanID = {
@@ -109,6 +120,45 @@ const newPlanWithoutPlanID = {
 
 const newPlan = {
   PlanID: 3,
+  Name: "Manager Approved Plan",
+  PlanDetail: [
+    {
+      ID: "A01-NPW",
+      Frequency: 36
+    },
+    {
+      ID: "A01-10POFF",
+      Frequency: 5
+    },
+    {
+      ID: "A01-30POFF",
+      Frequency: 10
+    },
+    {
+      ID: "A01-50POFF",
+      Frequency: 1
+    },
+    {
+      ID: "A02-NPW",
+      Frequency: 36
+    },
+    {
+      ID: "A02-10POFF",
+      Frequency: 5
+    },
+    {
+      ID: "A02-30POFF",
+      Frequency: 10
+    },
+    {
+      ID: "A02-50POFF",
+      Frequency: 1
+    }
+  ]
+};
+
+const updatedPlan = {
+  PlanID: 2,
   Name: "Manager Approved Plan",
   PlanDetail: [
     {
