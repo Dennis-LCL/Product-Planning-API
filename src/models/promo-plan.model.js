@@ -3,7 +3,8 @@ mongoose.set("useCreateIndex", true);
 const Schema = mongoose.Schema;
 
 const PromoPlanSchema = Schema({
-  Name: { type: String, required: true, unique: true },
+  PlanID: { type: Number, required: true, unique: true },
+  Name: { type: String, required: true },
   PlanDetail: [
     {
       ID: { type: String, required: true },

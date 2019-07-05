@@ -39,12 +39,109 @@ describe("routes/products", () => {
     await db.dropDatabase();
   });
 
-  it("GET / should return all products.", async () => {
+  it("GET / should return all saved plans.", async () => {
     await insertMockPromoPlans();
     const response = await request(app).get("/promoplans");
-    console.log("Expect: ", mockPromoPlans);
-    console.log("Received: ", response.body);
+    // console.log("Expect: ", mockPromoPlans);
+    // console.log("Received: ", response.body);
     expect(response.status).toEqual(200);
     expect(response.body).toMatchObject(mockPromoPlans);
   });
+
+  it("GET /:planid should return matched plan.", async () => {
+    await insertMockPromoPlans();
+    const response = await request(app).get("/promoplans/2");
+    // console.log("Expect: ", mockPromoPlans);
+    // console.log("Received: ", response.body);
+    expect(response.status).toEqual(200);
+    expect(response.body).toMatchObject(mockPromoPlans[1]);
+  });
+
+  it("POST / should auto increment ID and save a new plan.", async () => {
+    await insertMockPromoPlans();
+    const response = await request(app)
+      .post("/promoplans")
+      .send(newPlanWithoutPlanID);
+    // console.log("Expect: ", newPlan);
+    // console.log("Received: ", response.body);
+    expect(response.status).toEqual(200);
+    expect(response.body).toMatchObject(newPlan);
+  });
 });
+
+const newPlanWithoutPlanID = {
+  Name: "Manager Approved Plan",
+  PlanDetail: [
+    {
+      ID: "A01-NPW",
+      Frequency: 36
+    },
+    {
+      ID: "A01-10POFF",
+      Frequency: 5
+    },
+    {
+      ID: "A01-30POFF",
+      Frequency: 10
+    },
+    {
+      ID: "A01-50POFF",
+      Frequency: 1
+    },
+    {
+      ID: "A02-NPW",
+      Frequency: 36
+    },
+    {
+      ID: "A02-10POFF",
+      Frequency: 5
+    },
+    {
+      ID: "A02-30POFF",
+      Frequency: 10
+    },
+    {
+      ID: "A02-50POFF",
+      Frequency: 1
+    }
+  ]
+};
+
+const newPlan = {
+  PlanID: 3,
+  Name: "Manager Approved Plan",
+  PlanDetail: [
+    {
+      ID: "A01-NPW",
+      Frequency: 36
+    },
+    {
+      ID: "A01-10POFF",
+      Frequency: 5
+    },
+    {
+      ID: "A01-30POFF",
+      Frequency: 10
+    },
+    {
+      ID: "A01-50POFF",
+      Frequency: 1
+    },
+    {
+      ID: "A02-NPW",
+      Frequency: 36
+    },
+    {
+      ID: "A02-10POFF",
+      Frequency: 5
+    },
+    {
+      ID: "A02-30POFF",
+      Frequency: 10
+    },
+    {
+      ID: "A02-50POFF",
+      Frequency: 1
+    }
+  ]
+};
