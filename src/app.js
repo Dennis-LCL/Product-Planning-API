@@ -4,7 +4,8 @@ const cors = require("cors");
 const app = express();
 const promoParamsRouter = require("./routes/promo-params.route");
 const productsRouter = require("./routes/products.route");
-const promoGuidelineRouter = require("./routes/promo-guidelines.route");
+const promoGuidelinesRouter = require("./routes/promo-guidelines.route");
+const promoPlansRouter = require("./routes/promo-plans.route");
 const mongoose = require("mongoose");
 require("./models/product-plan.model");
 const ProductPlanModel = mongoose.model("Productplan");
@@ -14,7 +15,8 @@ app.use(cors());
 app.use(express.json());
 app.use("/promoparams", promoParamsRouter);
 app.use("/products", productsRouter);
-app.use("/promoguidelines", promoGuidelineRouter);
+app.use("/promoguidelines", promoGuidelinesRouter);
+app.use("/promoplans", promoPlansRouter);
 
 app.get("/greetings", (req, res) => {
   res.status(200).send("Happy Planning!");

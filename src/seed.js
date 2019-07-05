@@ -14,8 +14,6 @@ const defaultPromoGuidelines = require("../tests/promo-guidelines.mockdata");
 const defaultPromoParams = require("../tests/promo-params.mockdata");
 const defaultProductPlans = require("../tests/product-plans.mockdata");
 
-console.log(defaultProducts);
-
 const populateDefaultValuesInDB = async () => {
   await ProductModel.collection.drop();
   await PromoGuidelineModel.collection.drop();
