@@ -24,3 +24,5 @@ const populateDefaultValuesInDB = async () => {
   await PromoParamModel.create(defaultPromoParams);
   await ProductPlanModel.create(defaultProductPlans);
 };
+
+module.export = populateDefaultValuesInDB;
