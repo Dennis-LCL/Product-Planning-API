@@ -10,9 +10,11 @@ const PromoParamModel = mongoose.model("Promoparam");
 const ProductPlanModel = mongoose.model("Productplan");
 
 const defaultProducts = require("../tests/products.mockdata");
-// const defaultPromoGuidelines = require("../tests/promo-guidelines.mockdata");
+const defaultPromoGuidelines = require("../tests/promo-guidelines.mockdata");
 const defaultPromoParams = require("../tests/promo-params.mockdata");
 const defaultProductPlans = require("../tests/product-plans.mockdata");
+
+console.log(defaultProducts);
 
 const populateDefaultValuesInDB = async () => {
   await ProductModel.collection.drop();
@@ -26,56 +28,3 @@ const populateDefaultValuesInDB = async () => {
 };
 
 module.export = populateDefaultValuesInDB;
-
-const defaultPromoGuidelines = [
-  {
-    Product: {
-      Code: "A01",
-      Brand: "Boldie",
-      Group: "Shampoo 250ml",
-      Description: "Drop Your Hair Shampoo"
-    },
-    Guidelines: [
-      {
-        PTID: "10POFF",
-        PromoType: "10% Off",
-        MaxFrequency: 0
-      },
-      {
-        PTID: "30POFF",
-        PromoType: "30% Off",
-        MaxFrequency: 0
-      },
-      {
-        PTID: "50POFF",
-        PromoType: "50% Off",
-        MaxFrequency: 0
-      }
-    ]
-  },
-  {
-    Product: {
-      Code: "A02",
-      Brand: "Boldie",
-      Group: "Shampoo 250ml",
-      Description: "Scratch Your Sculp Shampoo"
-    },
-    Guidelines: [
-      {
-        PTID: "10POFF",
-        PromoType: "10% Off",
-        MaxFrequency: 0
-      },
-      {
-        PTID: "30POff",
-        PromoType: "30% Off",
-        MaxFrequency: 0
-      },
-      {
-        PTID: "50POff",
-        PromoType: "50% Off",
-        MaxFrequency: 0
-      }
-    ]
-  }
-];
