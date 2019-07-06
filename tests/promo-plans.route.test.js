@@ -77,7 +77,7 @@ describe("routes/products", () => {
     expect(response.body).toMatchObject(newPlan);
   });
 
-  it.only("POST / should create first plan with PlanID 1 when DB is empty.", async () => {
+  it("POST / should create first plan with PlanID 1 when DB is empty.", async () => {
     // await insertMockPromoPlans();
     const response = await request(app)
       .post("/promoplans")
@@ -97,6 +97,15 @@ describe("routes/products", () => {
     console.log("Received: ", response.body);
     expect(response.status).toEqual(200);
     expect(response.body).toMatchObject(updatedPlan);
+  });
+
+  it.skip("DELETE /:planid should find and delete the promo plan.", async () => {
+    await insertMockPromoPlans();
+    const response = await request(app).delete("/promoplans/2");
+    console.log("Expect: ", mockPromoPlans[1]);
+    console.log("Received: ", response.body);
+    expect(response.status).toEqual(200);
+    expect(response.body).toMatchObject(mockPromoPlans);
   });
 });
 

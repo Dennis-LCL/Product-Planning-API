@@ -72,4 +72,11 @@ promoPlansRouter.put("/:planid", async (req, res, next) => {
   res.status(200).send(updatedPromoPlan);
 });
 
+promoPlansRouter.delete("/:planid", async (req, res, next) => {
+  const deletedPromoPlan = await PromoPlanModel.deleteOne({
+    PlanID: Number(req.params.planid)
+  });
+  res.status(200).send(deletedPromoPlan);
+});
+
 module.exports = promoPlansRouter;
