@@ -44,7 +44,9 @@ promoPlansRouter.post("/", async (req, res, next) => {
   allPromoPlans.map(plan => {
     arrayOfID.push(plan.PlanID);
   });
-  const newPlanID = Math.max(...arrayOfID) + 1;
+
+  let newPlanID;
+  arrayOfID === 0 ? (newPlanID = 1) : (newPlanID = Math.max(...arrayOfID) + 1);
 
   // Construct new PromoPlan document
   const newPromoPlan = {
