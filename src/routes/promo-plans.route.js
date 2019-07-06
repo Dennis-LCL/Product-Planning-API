@@ -41,12 +41,15 @@ promoPlansRouter.post("/", async (req, res, next) => {
   // Construct new PlanID
   const arrayOfID = [];
   const allPromoPlans = await PromoPlanModel.find();
+  console.log(allPromoPlans);
   allPromoPlans.map(plan => {
     arrayOfID.push(plan.PlanID);
   });
 
   let newPlanID;
-  arrayOfID === 0 ? (newPlanID = 1) : (newPlanID = Math.max(...arrayOfID) + 1);
+  arrayOfID.length === 0
+    ? (newPlanID = 1)
+    : (newPlanID = Math.max(...arrayOfID) + 1);
 
   // Construct new PromoPlan document
   const newPromoPlan = {

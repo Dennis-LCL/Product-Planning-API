@@ -71,10 +71,21 @@ describe("routes/products", () => {
     const response = await request(app)
       .post("/promoplans")
       .send(newPlanWithoutPlanID);
-    // console.log("Expect: ", newPlan);
-    // console.log("Received: ", response.body);
+    console.log("Expect: ", newPlan);
+    console.log("Received: ", response.body);
     expect(response.status).toEqual(200);
     expect(response.body).toMatchObject(newPlan);
+  });
+
+  it.only("POST / should create first plan with PlanID 1 when DB is empty.", async () => {
+    // await insertMockPromoPlans();
+    const response = await request(app)
+      .post("/promoplans")
+      .send(newPlanWithoutPlanID);
+    // console.log("Expect: ", firstPlan);
+    console.log("Received: ", response.body);
+    expect(response.status).toEqual(200);
+    expect(response.body).toMatchObject(firstPlan);
   });
 
   it("PUT /:planid should find and update the promo plan.", async () => {
@@ -129,6 +140,45 @@ const newPlanWithoutPlanID = {
 
 const newPlan = {
   PlanID: 3,
+  Name: "Manager Approved Plan",
+  PlanDetail: [
+    {
+      ID: "A01-NPW",
+      Frequency: 36
+    },
+    {
+      ID: "A01-10POFF",
+      Frequency: 5
+    },
+    {
+      ID: "A01-30POFF",
+      Frequency: 10
+    },
+    {
+      ID: "A01-50POFF",
+      Frequency: 1
+    },
+    {
+      ID: "A02-NPW",
+      Frequency: 36
+    },
+    {
+      ID: "A02-10POFF",
+      Frequency: 5
+    },
+    {
+      ID: "A02-30POFF",
+      Frequency: 10
+    },
+    {
+      ID: "A02-50POFF",
+      Frequency: 1
+    }
+  ]
+};
+
+const firstPlan = {
+  PlanID: 1,
   Name: "Manager Approved Plan",
   PlanDetail: [
     {
