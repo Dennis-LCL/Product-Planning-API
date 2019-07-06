@@ -57,6 +57,15 @@ describe("routes/products", () => {
     expect(response.body).toMatchObject(mockPromoPlans[1]);
   });
 
+  it("GET /list/all should return a list of PlanID and Name.", async () => {
+    await insertMockPromoPlans();
+    const response = await request(app).get("/promoplans/list/all");
+    // console.log("Expect: ", mockList);
+    // console.log("Received: ", response.body);
+    expect(response.status).toEqual(200);
+    expect(response.body).toMatchObject(mockList);
+  });
+
   it("POST / should auto increment ID and save a new plan.", async () => {
     await insertMockPromoPlans();
     const response = await request(app)
@@ -195,3 +204,14 @@ const updatedPlan = {
     }
   ]
 };
+
+const mockList = [
+  {
+    PlanID: 1,
+    Name: "1st Draft Plan"
+  },
+  {
+    PlanID: 2,
+    Name: "Proposed Plan"
+  }
+];

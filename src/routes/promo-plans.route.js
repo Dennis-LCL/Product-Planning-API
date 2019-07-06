@@ -20,13 +20,21 @@ promoPlansRouter.get("/:planid", async (req, res, next) => {
   res.status(200).send(foundPromoPlan);
 });
 
-promoPlansRouter.get("/:planid", async (req, res, next) => {
-  console.log(req.params.planid);
-  const foundPromoPlan = await PromoPlanModel.findOne(
-    { PlanID: Number(req.params.planid) },
-    { _id: 0, __v: 0 }
-  );
-  res.status(200).send(foundPromoPlan);
+promoPlansRouter.get("/list/all", async (req, res, next) => {
+  const foundPromoPlans = await PromoPlanModel.find();
+  const planList = [];
+
+  // Construct the list of available plans with only PlanID and Name.
+  foundPromoPlans.map(plan => {
+    const planListItem = {
+      PlanID: plan.PlanID,
+      Name: plan.Name
+    };
+    planList.push(planListItem);
+    return;
+  });
+
+  res.status(200).send(planList);
 });
 
 promoPlansRouter.post("/", async (req, res, next) => {
